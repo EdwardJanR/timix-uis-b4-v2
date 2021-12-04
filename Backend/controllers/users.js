@@ -21,11 +21,10 @@ exports.postUser = (req, res) => {
   // users.push(req.body);
     const userAdd = new User({
         name_user: req.body.name_user,
-        año: req.body.año,
-        artist: req.body.artist,
-        album: req.body.album,
-        category: req.body.category,
-        generation: req.body.generation
+        email: req.body.email,
+        password: req.body.password,
+        rol: req.body.rol,
+        registration_date: req.body.registration_date
     });
 
 
