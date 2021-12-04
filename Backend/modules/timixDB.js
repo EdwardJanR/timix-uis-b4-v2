@@ -1,13 +1,9 @@
-const mongoose = require('mongoose');  
-
-
-var server = "timix.ktalb.mongodb.net";
-var db = "TiMiX";
-var password = "MisionTic2021*";
+const mongoose = require('mongoose');
+require('dotenv').config() 
 
 class TiMiXDB{
     constructor(){
-        mongoose.connect(`mongodb+srv://${db}:${password}@${server}/${db}?retryWrites=true&w=majority`)
+        mongoose.connect(`mongodb+srv://${process.env.DB_BASE}:${process.env.DB_PASS}@${process.env.DB_SERVER}/${process.env.DB_BASE}?retryWrites=true&w=majority`)
         .then(( )=> {
             console.log('estoy conectado a la Base de TiMiX')
         })
