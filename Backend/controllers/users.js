@@ -49,15 +49,12 @@ exports.delUser = (req, res) => {
 exports.updateUser = (req, res) => {
     const id = req.params.id;
 
-
     const user = new User({
         _id: id,
         name_user: req.body.name_user,
-        año: req.body.año,
-        artist: req.body.artist,
-        album: req.body.album,
-        category: req.body.category,
-        generation: req.body.generation
+        email: req.body.email,
+        password: req.body.password,
+        rol: req.rolData.rolId
     });
 
     User.updateOne({ _id: id}, user).then(
